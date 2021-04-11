@@ -1,9 +1,12 @@
 {
   "name": "html-git-version-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple webpack plugin that generates VERSION and commitInfo insert index.html during build",
-  "main": "lib/index.js",
-  "scripts": {},
+  "main": "dist/html-git-version-plugin.js",
+  "scripts": {
+    "build": "rollup -c",
+    "deploy": "npm run build && npm publish"
+  },
   "engines": {
     "node": ">=10.0.0"
   },
@@ -28,7 +31,13 @@
   },
   "homepage": "https://github.com/hanyueqiang/html-git-version-plugin",
   "devDependencies": {
+    "@babel/core": "^7.13.15",
+    "@babel/preset-env": "^7.13.15",
     "dayjs": "^1.10.4",
-    "last-commit-log": "^3.1.1"
+    "last-commit-log": "^3.1.1",
+    "rollup": "^2.45.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
   }
 }
