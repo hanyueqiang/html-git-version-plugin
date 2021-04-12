@@ -1,4 +1,4 @@
-import babel from "rollup-plugin-babel";
+import { babel } from '@rollup/plugin-babel';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 
@@ -10,14 +10,8 @@ export default {
     name: 'bundle-name'
   },
   plugins: [
-    resolve({
-      jsnext: true,
-      main: true,
-      browser: true,
-    }),
+    resolve(),
     commonjs(),
-    babel({
-      exclude: 'node_modules/**',
-    }),
-  ],
+    babel({ babelHelpers: 'bundled' }),
+  ]
 };
